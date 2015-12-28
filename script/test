@@ -1,0 +1,6 @@
+#!/bin/bash
+for test_in in test*.in
+do
+  test_out="${test_in/in/out}"
+  ./run.py < "$test_in" | diff - "$test_out"
+done
